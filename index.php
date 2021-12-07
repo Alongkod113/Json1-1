@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <button id="btnJSON1"> JSON 1 </button>
+    <button id="btnJSON1"> JSON 1 </button><br/>
     Name : <span id="fname"></span> <br/>
     Sname: <span id="lname"></span>
 </body>

@@ -18,11 +18,14 @@
         var url = "https://cj-android-demon.herokuapp.com/json1.php";
         $.getJSON(url,(data,status)=>{
             console.log(data);
+            var jData = JSON.parse(data);
+            console.log(jData.fname)
+            console.log(jData.lname)
         });
     }
-    // (()=>{
-    //     $("#btnJSON1").click(loadJSON)
-    // });
+     (()=>{
+         $("#btnJSON1").click(loadJSON)
+     });
 </script>
 </body>
 </html>

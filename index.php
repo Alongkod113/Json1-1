@@ -33,7 +33,7 @@ function loadJSON(){
         .done((data)=>{
             console.log(data);
             $("#fname").text(data.fname);
-            $("#lname").text(data.fname);
+            $("#lname").text(data.lname);
         })
         .fail((xhr, status, err)=>{
             console.log("error")
@@ -44,3 +44,4 @@ $(()=>{
 });
 </script>
 </html>
+

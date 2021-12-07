@@ -27,11 +27,28 @@
 // $(()=>{
 //     $("#btnJSON1").click(loadJSON);
 // });
+// function loadJSON(){
+//     var url = "https://cj-android-demon.herokuapp.com/json1.php";
+//     $.getJSON(url)
+//         .done((data)=>{
+//             console.log(data);
+//             $("#fname").text(data.fname);
+//             $("#lname").text(data.lname);
+//         })
+//         .fail((xhr, status, err)=>{
+//             console.log("error")
+//         });
+// }
+// $(()=>{
+//     $("#btnJSON1").click(loadJSON);
+// });
 function loadJSON(){
-    var url = "https://cj-android-demon.herokuapp.com/json1.php";
+    var url = "https://cj-android-demon.herokuapp.com/json2.php";
     $.getJSON(url)
         .done((data)=>{
             console.log(data);
+            console.log(data[1]);
+            console.log(data[2].fname);
             $("#fname").text(data.fname);
             $("#lname").text(data.lname);
         })
@@ -44,4 +61,5 @@ $(()=>{
 });
 </script>
 </html>
+
 

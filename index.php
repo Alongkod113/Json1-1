@@ -8,10 +8,21 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <button id="btnJSON1"> JSON 1 </button><br/>
+    <!-- <button id="btnJSON1"> JSON 1 </button><br/>
     Name : <span id="fname"></span> <br/>
-    Sname: <span id="lname"></span>
+    Sname: <span id="lname"></span> -->
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th><th>First Name</th><th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody id="tblStudent">
+        </tbody>
+    </table>
 </body>
+
 <script>
 // function loadJSON(){
 //     var url = "https://cj-android-demon.herokuapp.com/json1.php";
@@ -43,23 +54,30 @@
 //     $("#btnJSON1").click(loadJSON);
 // });
 function loadJSON(){
-    var url = "https://cj-android-demon.herokuapp.com/json2.php";
+    var url = "https://cj-android-demon.herokuapp.com/json1.php";
     $.getJSON(url)
         .done((data)=>{
             console.log(data);
-            console.log(data[1]);
-            console.log(data[2].fname);
-            $("#fname").text(data.fname);
-            $("#lname").text(data.lname);
+            $.each(data,  (k, item)=>{
+                console.log(k);
+                console.log(item);
+                var line = "<tr>";
+                    line += "<td>" + (k+1) + "</td>";
+                    line += "<td>" + item.fname + "</td>";
+                    line += "<td>" + item.lname + "</td>";
+                    line += "</tr>";
+                $("#tblStudent").append(line);
+            });
         })
         .fail((xhr, status, err)=>{
-            console.log("error")
         });
 }
 $(()=>{
-    $("#btnJSON1").click(loadJSON);
+    loadJSON();
 });
 </script>
+
 </html>
+
 
 
